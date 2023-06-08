@@ -1,0 +1,138 @@
+img {
+    border: none;
+}
+
+ul, li {
+    list-style: none;
+}
+
+#pro_datail_table tr td {
+    color: #000000;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.commond {
+    padding-left: 20px;
+}
+
+#describle_top {
+    background-image: url(../shop_image/goodsdescripTipTop.jpg);
+    width: 750px;
+    height: 50px;
+    padding-left: 20px;
+    color: #FFFFFF;
+    font-weight: 900;
+    line-height: 50px;
+}
+
+#describle_middle {
+    width: 770px;
+    background-image: url(../shop_image/goodsdescripTipmiddle.jpg);
+    background-repeat: repeat-y;
+    font-size: 13px;
+}
+
+#describle_bottom {
+    width: 770px;
+    height: 15px;
+    background-image: url(../shop_image/goodsdescripTipbottom.jpg);
+    background-repeat: no-repeat;
+}
+
+#profeatureTop {
+    color: #1c87d2;
+    font-size: 15px;
+    font-weight: 900;
+    margin-left: 10px;
+}
+
+#profeatureTopMain {
+    margin-left: 10px;
+    line-height: 23px;
+    font-weight: 500;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+#service_top {
+    font-size: 17px;
+    color: #1c87d2;
+    width: 770px;
+    font-weight: 900px;
+}
+
+#service_line {
+    background-image: url(../shop_image/service_top.jpg);
+    width: 770px;
+    height: 5px;
+    background-repeat: repeat-x;
+}
+
+#service_main {
+    width: 770px;
+    padding-left: 10px;
+    padding-right: 100px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+#messages {
+    width: 770px;
+    font-size: 13px;
+}
+
+#messages_top {
+    width: 770px;
+    background-image: url(../shop_image/goodsdescripTipTop1.jpg);
+    height: 50px;
+}
+
+#page a {
+    font-size: 13px;
+    text-decoration: none;
+    margin-left: 10px;
+    color: #8e8d8d;
+}
+
+#page a:hover {
+    text-decoration: underline;
+}
+
+#goodTiptitle {
+    border-bottom: #188ad5 solid 2px;
+}
+
+#contain_mess {
+    height: 800px;
+    margin-top: 20px;
+}
+
+#mess_box {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: #D9D9D9 dashed 1px;
+}
+
+#mess_text {
+    width: 670px;
+    height: 230px;
+}
+
+.leaveMesser {
+    color: #188ad5;
+    font-size: 15px;
+    font-weight: 900;
+    padding-left: 10px;
+}
+
+#anonymity {
+    height: 18px;
+    width: 18px;
+}
+
+#anonymity_text {
+    color: #242424;
+    font-size: 14px;
+    font-family: ����;
+}

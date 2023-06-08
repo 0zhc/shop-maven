@@ -1,0 +1,16 @@
+#preview_wrapper{   
+    display:inline-block;   
+  
+    background-color:#CCC;
+}   
+#preview_fake{ /* 该对象用于在IE下显示预览图片 */   
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);   
+   
+}   
+#preview_size_fake{ /* 该对象只用来在IE下获得图片的原始尺寸，无其它用途 */   
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=image);     
+
+}   
+#preview{ /* 该对象用于在FF下显示预览图片 */   
+     
+}   

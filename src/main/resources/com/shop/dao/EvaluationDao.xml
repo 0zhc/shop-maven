@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shop.dao.EvaluationDao">
+    <insert id="addEvaluation">
+        insert into evaluation
+        values (null, #{evaluation.goodsId}, #{evaluation.authorName}, #{evaluation.content}, #{evaluation.createDate},
+                #{evaluation.tag})
+    </insert>
+    <select id="findAllEvaluationByHql" resultType="com.shop.entity.Evaluation">
+        select *
+        from evaluation
+        where goodsId = #{goodId}
+          and tag = 1 limit #{start}
+            , #{max}
+    </select>
+    <select id="getTotal" resultType="java.lang.Integer">
+        select count(*)
+        from evaluation
+        where goodsId = #{goodId}
+    </select>
+</mapper>

@@ -1,0 +1,19 @@
+#preview_wrapper {
+    display: inline-block;
+
+    background-color: #CCC;
+}
+
+#preview_fake { /* �ö���������IE����ʾԤ��ͼƬ */
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
+
+}
+
+#preview_size_fake { /* �ö���ֻ������IE�»��ͼƬ��ԭʼ�ߴ磬��������; */
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=image);
+
+}
+
+#preview { /* �ö���������FF����ʾԤ��ͼƬ */
+
+}   

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shop.dao.CollectionShopDao">
+    <insert id="save">
+        insert into collection_shop values(null,#{collectionShop.userId},#{collectionShop.shopsId},#{collectionShop.storeDate},#{collectionShop.tag})
+    </insert>
+    <update id="collectionShopDeleteByShopId">
+        update collection_shop set tag=2 where userId=#{userId} and shopsId = #{shopId}
+    </update>
+    <select id="collectionShopCountByUserId" resultType="java.lang.Integer">
+        select count(*) from collection_shop where userId=#{userId} and tag=1;
+    </select>
+    <select id="collectionShopFindByUserId" resultType="com.shop.entity.CollectionShop">
+        select * from collection_shop where userId=#{userId} and tag=1 order by storeDate desc limit #{begin},#{RecordCount}
+    </select>
+    <select id="collectionShopCount" resultType="java.lang.Integer">
+        select count(*) from collection_shop cs join shop s on cs.shopsId = s.id where cs.userId=#{userId} and cs.tag=1 and s.tag=1
+        <if test="datetime1 != '' and datetime2 != ''">
+            and date(cs.storeDate) >= date(#{datetime1}) and date(cs.storeDate) <![CDATA[<=]]> date(#{datetime2})
+        </if>
+        <if test="shopName != '' ">
+            and s.name like concat('%',#{shopName},'%')
+        </if>
+
+    </select>
+    <select id="collectionShopSelectAllShop" resultType="com.shop.entity.CollectionShop">
+        select cs.id,cs.userId,cs.shopsId,storeDate,cs.tag from collection_shop cs join shop s on cs.shopsId = s.id where cs.userId=#{userId} and cs.tag=1 and s.tag=1
+        <if test="datetime1 != '' and datetime2 != ''">
+            and date(cs.storeDate) >= date(#{datetime1}) and date(cs.storeDate) <![CDATA[<=]]> date(#{datetime2})
+        </if>
+        <if test="shopName != '' ">
+            and s.name like concat('%',#{shopName},'%')
+        </if>
+        limit #{begin},#{RecordCount}
+    </select>
+    <select id="sleectCollectionShop" resultType="com.shop.entity.CollectionShop">
+        select * from collection_shop where userId=#{userId} and shopsId=#{shopId} and tag=1
+    </select>
+</mapper>

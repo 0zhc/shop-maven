@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shop.dao.UserDao">
+    <insert id="addShop" useGeneratedKeys="true" keyProperty="shop.id">
+        insert into shop
+        values (null, #{userId}, #{shop.name}, #{shop.shopBigAddress}, #{shop.shopDetailAddress}, #{shop.url}, null,
+                null, #{shop.shopBuyType}, #{shop.shopInfo}, #{shop.deliverScope}, #{shop.secureShop},
+                #{shop.contactUs}, #{shop.createDate}, #{shop.template}, #{shop.isShowHot}, #{shop.isShowNew},
+                #{shop.isShowSecond}, null, #{shop.otherText}, #{shop.tag})
+    </insert>
+    <update id="updateShopUrl">
+        update shop
+        set url=#{shopUrl}
+        where userId = #{shopId}
+    </update>
+    <update id="updateShopTemplate">
+        update shop
+        set template=#{template}
+        where id = #{shopId}
+    </update>
+    <update id="updateShop">
+        update shop
+        set template=#{shop.template},
+            name=#{shop.name},
+            shopBigAddress=#{shop.shopBigAddress},
+            shopBuyType=#{shop.shopBuyType},
+            shopDetailAddress=#{shop.shopDetailAddress},
+            shopInfo=#{shop.shopInfo}
+        where id = #{shopId}
+    </update>
+    <update id="modifyUser">
+        update user
+        set callName=#{user.callName},
+            email=#{user.email},
+            userPassword=#{user.userPassword}
+        where id = #{user.id}
+          and tag = 1
+    </update>
+    <update id="deleteUserById">
+        update user
+        set tag=2
+        where id = #{userId}
+    </update>
+    <update id="modifyUserType">
+        update user
+        set userType = 2
+        where id = #{id}
+          and tag = 1
+    </update>
+
+
+    <select id="getUserById" resultType="com.shop.entity.User">
+        select *
+        from user
+        where id = #{userId}
+    </select>
+    <select id="findUserByUserId" resultType="com.shop.entity.User">
+        select *
+        from user
+        where id = #{userId}
+    </select>
+    <select id="oldPasswordExit" resultType="com.shop.entity.User">
+        select *
+        from user
+        where id = #{user.id}
+          and userPassword = #{user.userPassword}
+    </select>
+    <select id="users" resultType="com.shop.entity.User">
+        select * from user
+        <where>
+            <if test="userName != '' and userName != null">
+                and userName like concat('%',#{userName},'%')
+            </if>
+            <if test="beginDate != '' and beginDate != null and endDate != null and endDate != ''">
+                and createDate >= #{beginDate} and createDate <![CDATA[<=]]> #{endDate}
+            </if>
+        </where>
+        limit #{begin} ,#{RecordCount}
+    </select>
+    <select id="counts" resultType="java.lang.Integer">
+        select count(*) from user
+        <where>
+            <if test="userName != '' and userName != null">
+                and userName like concat('%',#{userName},'%')
+            </if>
+            <if test="beginDate != '' and beginDate != null and endDate != null and endDate != ''">
+                and createDate >= #{beginDate} and createDate <![CDATA[<=]]> #{endDate}
+            </if>
+        </where>
+    </select>
+    <select id="findUserByUserName" resultType="com.shop.entity.User">
+        select *
+        from user
+        where userName = #{userName}
+    </select>
+    <select id="activeCode" resultType="java.lang.Integer">
+        select count(*)
+        from code_active
+        where businessId = #{id}
+          and active = #{activeCode}
+          and isActive = 2
+    </select>
+</mapper>

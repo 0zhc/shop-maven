@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shop.dao.ShopAnnouceDao">
+    <insert id="addShopAnnouce">
+        insert into shop_annouce
+        values (null, #{shopId}, null, #{shopAnnouce.content}, #{shopAnnouce.inTime}, #{shopAnnouce.tag})
+    </insert>
+    <update id="modifyShopAnnouce">
+        update shop_annouce
+        set content=#{content}
+        where id = #{id}
+    </update>
+
+    <select id="findNewByShopId" resultType="com.shop.entity.ShopAnnouce">
+        select *
+        from shop_annouce
+        where shopId = #{shopId}
+          and tag = 1
+        order by id asc
+    </select>
+    <select id="getShopAnnouce" resultType="com.shop.entity.ShopAnnouce">
+        select *
+        from shop_annouce
+        where shopId = #{shopId}
+        order by id asc
+    </select>
+</mapper>

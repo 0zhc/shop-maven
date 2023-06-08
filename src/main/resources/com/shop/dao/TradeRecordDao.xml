@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shop.dao.TradeRecordDao">
+    <insert id="saveBuyTradeRecord">
+        insert into trade_record
+        values (null, #{buyTradeRecord.userId}, #{buyTradeRecord.goodsId}, #{buyTradeRecord.goodsOrderId}, null,
+                #{buyTradeRecord.tradeTime}, null, #{buyTradeRecord.isBuy}, #{buyTradeRecord.tag})
+    </insert>
+    <insert id="saveSoleTradeRecord">
+        insert into trade_record
+        values (null, #{soleTradeRecord.userId}, #{soleTradeRecord.goodsId}, #{soleTradeRecord.goodsOrderId},
+                #{soleTradeRecord.buyerId}, #{soleTradeRecord.tradeTime}, null, #{soleTradeRecord.isBuy},
+                #{soleTradeRecord.tag})
+    </insert>
+    <update id="modifyTradeRecordById">
+        update trade_record
+        set preRightsId=0
+        where id = #{tradeId}
+          and tag = 1
+    </update>
+    <update id="deleteTradeRecordById">
+        update trade_record
+        set tag=2
+        where id = #{id}
+    </update>
+    <select id="getTotal" resultType="java.lang.Integer">
+        select count(*)
+        from trade_record as t
+        where t.userId = #{userId}
+          and t.tag = 1
+          and isBuy = 1
+        order by t.tradeTime desc
+    </select>
+    <select id="findTradeRecordByBuy" resultType="com.shop.entity.TradeRecord">
+        select *
+        from trade_record as t
+        where userId = #{userId}
+          and t.tag = 1
+          and isBuy = 1
+        order by t.tradeTime desc limit #{start}, #{max}
+    </select>
+    <select id="getTradRecordById" resultType="com.shop.entity.TradeRecord">
+        select *
+        from trade_record
+        where id = #{id}
+          and tag = 1
+    </select>
+    <select id="findTradeRecordBySell" resultType="com.shop.entity.TradeRecord">
+        select *
+        from trade_record as t
+        where userId = #{userId}
+          and t.tag = 1
+          and isBuy = 2
+        order by t.tradeTime desc limit #{start}, #{max}
+    </select>
+    <select id="collectionTradeRecordCountIsBuy" resultType="java.lang.Integer">
+        select count(*) from trade_record tr join goods g on tr.goodsId = g.id where tr.userId=#{userId} and tr.tag=1
+        and g.tag=1 and tr.isBUy=1
+        <if test="startTradeTime != '' and startTradeTime != null and endTradeTime != '' and endTradeTime != null">
+            and tr.TradeTime >= date(#{startTradeTime}) and TradeTime <![CDATA[<=]]> date(#{endTradeTime})
+        </if>
+        <if test="goodsName != '' and goodsName != null">
+            and g.name like concat('%',#{goodsName},'%')
+        </if>
+    </select>
+    <select id="collectionTradeRecordsIsBuy" resultType="com.shop.entity.TradeRecord">
+        select tr.id,tr.userId,tr.goodsId,tr.goodsOrderId,tr.buyerId,tr.TradeTime,tr.preRightsID,tr.isBuy,tr.tag from
+        trade_record tr join goods g on tr.goodsId = g.id where tr.userId=#{userId} and tr.tag=1 and g.tag=1 and
+        tr.isBUy=1
+        <if test="startTradeTime != '' and startTradeTime != null and endTradeTime != '' and endTradeTime != null">
+            and tr.TradeTime >= date(#{startTradeTime}) and TradeTime <![CDATA[<=]]> date(#{endTradeTime})
+        </if>
+        <if test="goodsName != '' and goodsName != null">
+            and g.name like concat('%',#{goodsName},'%')
+        </if>
+        limit #{beginIndex},#{everyPage}
+    </select>
+    <select id="collectionTradeRecordCountIsSole" resultType="java.lang.Integer">
+        select count(*) from trade_record tr join goods g on tr.goodsId = g.id where tr.userId=#{userId} and tr.tag=1
+        and g.tag=1 and tr.isBUy=2
+        <if test="startTradeTime != '' and startTradeTime != null and endTradeTime != '' and endTradeTime != null">
+            and tr.TradeTime >= date(#{startTradeTime}) and TradeTime <![CDATA[<=]]> date(#{endTradeTime})
+        </if>
+        <if test="goodsName != '' and goodsName != null ">
+            and g.name like concat('%',#{goodsName},'%')
+        </if>
+    </select>
+    <select id="collectionTradeRecordsIsSole" resultType="com.shop.entity.TradeRecord">
+        select tr.id,tr.userId,tr.goodsId,tr.goodsOrderId,tr.buyerId,tr.TradeTime,tr.preRightsID,tr.isBuy,tr.tag from
+        trade_record tr join goods g on tr.goodsId = g.id where tr.userId=#{userId} and tr.tag=1 and g.tag=1 and
+        tr.isBUy=2
+        <if test="startTradeTime != '' and startTradeTime != null and endTradeTime != '' and endTradeTime != null">
+            and tr.TradeTime >= date(#{startTradeTime}) and TradeTime <![CDATA[<=]]> date(#{endTradeTime})
+        </if>
+        <if test="goodsName != '' and goodsName != null ">
+            and g.name like concat('%',#{goodsName},'%')
+        </if>
+        limit #{beginIndex},#{everyPage}
+    </select>
+    <select id="getTotalSizeIsSole" resultType="java.lang.Integer">
+        select count(*)
+        from trade_record
+        where userId = #{userId}
+          and isBuy = 2
+          and tag = 1;
+    </select>
+</mapper>

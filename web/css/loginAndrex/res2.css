@@ -1,0 +1,20 @@
+#footer {
+    top: 64px;
+}
+
+#foot_main ul {
+    left: 36px !important;
+}
+
+.line3 {
+    top: 690px;
+    left: 531px;
+}
+
+.line3 ul li {
+    float: left;
+    margin-right: 98px;
+    height: 14px;
+    width: 1px;
+    border-left: 1px solid #d7d7d7;
+}

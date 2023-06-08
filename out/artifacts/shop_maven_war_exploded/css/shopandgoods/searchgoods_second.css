@@ -1,0 +1,91 @@
+#banner {
+    position: absolute;
+    top: 30px;
+    left: 20px;
+}
+#search_shopIntroduct_top {
+    position: relative;
+    background-size: 996px;
+    width: 992px !important;
+}
+#search_shopIntroduct_top span {
+    position: absolute;
+    top: 6px;
+    left: 0px;
+}
+#show_shop_tip {
+    position: relative;
+    padding-top: 11px;
+    padding-left: 20px;
+    width: 990px;
+    background-image: url("") !important;
+    border-bottom: 2px solid #c2dfe6;
+}
+#show_shop_tip img {
+    position: absolute;
+    top: 12px;
+    left: 0px;
+}
+#show_shop_search {
+
+    width: 987px;
+}
+tbody {
+    width: 987px;
+}
+#table tr {
+    width: 987px;
+}
+#table td {
+    width: 167px;
+    text-align: center !important;
+    height: 117px !important;
+}
+#showShop {
+    position: relative;
+}
+#pageAction {
+    position: absolute;
+    top: 591px;
+    left: 223px;
+}
+.s1 {
+    position: absolute;
+    top: 0px;
+    left: 445px;
+}
+#state {
+    top: 972px;
+}
+#foot_main ul {
+    top: -118px;
+}
+.backg {
+    top: 976px;
+}
+.line1 {
+    position: absolute;
+    z-index: 3;
+    top: 1119px;
+    left: 305px;
+    background-color: #ededed;
+    height: 1px;
+    width: 812px;
+}
+.line2 {
+    top: 1137px;
+    left: 603px;
+}
+.line3 ,.line4 {
+    top: 12px;
+}
+.line5 {
+    top: 12px;
+    left: 313px;
+}
+#container {
+    height: 1246px;
+}
+.backg {
+    height: 406px;
+}

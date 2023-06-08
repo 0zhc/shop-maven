@@ -1,0 +1,109 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#search_prolist {
+    height: 1210px;
+    border: #d9d9d9 solid 1 spx;
+}
+
+/*search_condition*/
+#search_condition {
+    height: 38px;
+    position: relative;
+}
+
+#search_condition_title {
+    height: 35px;
+    border-bottom: #a3c7da solid 1px;
+}
+
+#condition_title_letter {
+    height: 35px;
+    width: 140px;
+    font-family: ����;
+    font-size: 15px;
+    font-weight: bold;
+    color: #0074ce;
+    line-height: 35px;
+    margin-left: 10px;
+    padding-left: 20px;
+    background: url(../shop_image/condition_title_mark.jpg) no-repeat left center;
+}
+
+/*condition_goods*/
+#condition_goods {
+    height: 1100px;
+    margin-top: 12px;
+}
+
+#condition_goods ul {
+    float: left;
+    height: 1100px;
+    width: 946px;
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+
+#condition_goods ul li {
+    float: left;
+    padding-top: 7px;
+    padding-left: 41px;
+}
+
+#condition_goods ul li a img {
+    width: 183px;
+    height: 122px;
+    border: #F3F3F3 solid 1px;
+}
+
+#condition_goods ul li span {
+    display: block;
+    padding-top: 5px;
+}
+
+.pro_name {
+    text-align: center;
+}
+
+.pro_name a {
+    font-size: 13px;
+    font-family: ����;
+    color: #0185d0;
+    text-decoration: none;
+    text-align: center;
+}
+
+.pro_name a:hover {
+    color: #fe4800;
+}
+
+.pro_price {
+    font-size: 15px;
+    font-family: ����;
+    color: #fe4800;
+    padding-left: 100px;
+    background: url(../shop_image/pro_price.jpg) no-repeat 32px center;
+    margin-bottom: 5px;
+}
+
+.buy {
+    float: left;
+    display: block;
+    width: 91px;
+    height: 23px;
+    background: url(../shop_image/buy.jpg) no-repeat center center;
+}
+
+.collect {
+    float: left;
+    display: block;
+    width: 91px;
+    height: 23px;
+    background: url(../shop_image/collect.jpg) no-repeat center center;
+}
+
+.letter_right_back {
+    width: 801px;
+}

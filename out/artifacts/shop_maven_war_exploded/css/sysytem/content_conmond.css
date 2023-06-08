@@ -1,0 +1,8 @@
+@charset "utf-8";
+/* CSS Document */
+*{ padding:0px; margin:0px;}
+#navigation {font-size:13px; color:#333;}
+#navigation a{font-size:13px; color:#333;text-decoration:none;}
+#navigation a:hover{font-size:13px; color:#333;text-decoration:underline;}
+#content{height:830px;
+    width: 965px;padding-top:10px; padding-left:15px !important;}

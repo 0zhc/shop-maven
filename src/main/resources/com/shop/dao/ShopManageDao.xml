@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shop.dao.ShopManageDao">
+    <update id="shopManageDeleteByShopId">
+        update shop
+        set tag=2
+        where id = #{shopId}
+    </update>
+    <update id="shopManageDeleteById">
+        update shop
+        set tag=2
+        where id = #{id}
+    </update>
+    <select id="findAllshopManage" resultType="com.shop.entity.Shop">
+        select *
+        from shop
+        where tag = 1 limit #{begin}
+            , #{RecordCount}
+    </select>
+    <select id="shopManagetCount" resultType="java.lang.Integer">
+        select count(*) from shop s ,user u where s.userId = u.id and s.tag=1 and u.tag=1
+        <if test="shopName != '' and shopName != null">
+            and s.name like concat('%',#{shopName},'%')
+        </if>
+        <if test="shopUser != null and shopUser != ''">
+            and u.userName like concat('%',#{shopUser},'%')
+        </if>
+        <if test="datetime1 != '' and datetime2 != ''">
+            and s.createDate >= date(#{datetime1}) and s.createDate <![CDATA[<=]]> date(#{datetime2})
+        </if>
+    </select>
+    <select id="shopManagerSelectAllShop" resultType="com.shop.entity.Shop">
+        select s.id,s.userId,s.name,s.logoUrl,s.shopBuyType,s.shopInfo,s.createDate from shop s ,user u where s.userId =
+        u.id and s.tag=1 and u.tag=1
+        <if test="shopName != '' and shopName != null">
+            and s.name like concat('%',#{shopName},'%')
+        </if>
+        <if test="shopUser != null and shopUser != ''">
+            and u.userName like concat('%',#{shopUser},'%')
+        </if>
+        <if test="datetime1 != '' and datetime2 != ''">
+            and s.createDate >= date(#{datetime1}) and s.createDate <![CDATA[<=]]> date(#{datetime2})
+        </if>
+        limit #{begin} ,#{RecordCount}
+    </select>
+</mapper>

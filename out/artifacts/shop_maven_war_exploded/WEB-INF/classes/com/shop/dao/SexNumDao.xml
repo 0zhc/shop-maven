@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.shop.dao.SexNumDao">
+
+    <select id="sexNum" resultType="java.lang.Integer">
+        select count(*) from user where sex=#{id} and tag=1
+    </select>
+    <select id="ageNum" resultType="java.lang.Integer">
+        select count(*) from user where age >=#{begin} and age <![CDATA[<=]]> #{end}
+    </select>
+    <select id="gradeNum" resultType="java.lang.Integer">
+        select count(*) from user where grade like concat(#{grade})
+    </select>
+    <select id="getTotalSizeIsSole" resultType="java.lang.Integer">
+        select count(*) from goods_order where tag=1
+    </select>
+    <select id="salesAmount" resultType="java.lang.Integer">
+        SELECT SUM(total) FROM goods_order where tag=1
+    </select>
+    <select id="typeNum" resultType="java.lang.Integer">
+        select count(*) from goods where goodsType=#{id} and tag=1
+    </select>
+    <select id="getQuarterData" resultType="java.lang.Integer">
+        SELECT SUM(total) AS total_sales
+        FROM goods_order
+        GROUP BY YEAR(STR_TO_DATE(TradeTime, '%Y-%m-%d %H:%i:%s')), QUARTER(STR_TO_DATE(TradeTime, '%Y-%m-%d %H:%i:%s'))
+    </select>
+    <select id="getWeekData" resultType="java.lang.Integer">
+        SELECT SUM(total) AS total_sales
+        FROM goods_order
+        GROUP BY YEAR(STR_TO_DATE(TradeTime, '%Y-%m-%d %H:%i:%s')), WEEK(STR_TO_DATE(TradeTime, '%Y-%m-%d %H:%i:%s'))
+    </select>
+    <select id="getYearData" resultType="java.lang.Integer">
+        SELECT  SUM(total) AS total_sales
+        FROM goods_order
+        GROUP BY YEAR(STR_TO_DATE(TradeTime, '%Y-%m-%d %H:%i:%s'))
+    </select>
+    <select id="getMonthData" resultType="java.lang.Integer">
+        SELECT SUM(total) AS total_sales
+        FROM goods_order
+        GROUP BY YEAR(STR_TO_DATE(TradeTime, '%Y-%m-%d %H:%i:%s')), MONTH(STR_TO_DATE(TradeTime, '%Y-%m-%d %H:%i:%s'))
+    </select>
+    <select id="getShopSexNum" resultType="java.lang.Integer">
+        SELECT COUNT(DISTINCT o.userId) AS customer_count
+        FROM goods_order o
+                 JOIN `user` u ON u.id = o.`userId`
+                 JOIN goods g ON o.goodId = g.id
+                 JOIN shop s ON g.shopId = s.id
+        WHERE s.userId = #{id} AND u.`sex`=#{isMan};
+    </select>
+    <select id="getUserCount" resultType="java.lang.Integer">
+        select count(*) from user
+    </select>
+    <select id="getSellNum" resultType="java.lang.Integer">
+        select count(*) from shop where tag=1
+    </select>
+    <select id="getBuyNum" resultType="java.lang.Integer">
+        select count(distinct userId) from goods_order
+    </select>
+    <select id="getErrorNum" resultType="java.lang.Integer">
+        select count(*) from user where tag=2
+    </select>
+    <select id="getNewUser" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM user
+        WHERE MONTH(createDate) = MONTH(NOW()) AND YEAR(createDate) = YEAR(NOW());
+    </select>
+</mapper>

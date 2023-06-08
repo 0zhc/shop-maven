@@ -1,0 +1,106 @@
+#foot_main ul {
+    top: 50px;
+}
+
+.line1 {
+    top: 2338px;
+}
+
+.line0 {
+    top: 51px;
+}
+
+#selectItem {
+    top: 56px !important;
+    left: 274px !important;
+    z-index: 1000 !important;
+}
+
+.line3 {
+    left: 1016px
+}
+
+.line4 {
+
+    left: 1034px;
+}
+
+#shop_troduct_top ul li {
+    text-align: center;
+}
+
+.size2 {
+    width: 121px;
+}
+
+#good_introduce_left_middle ul li p {
+    padding-left: 0px;
+    width: 96px;
+    text-align: center;
+}
+
+#ratherPrice_middle ul li p {
+    padding-left: 0px;
+    width: 96px;
+    text-align: center;
+}
+
+#ratherPrice_middle ul li .fis {
+    padding-left: 0px;
+    width: 120px;
+    text-align: center;
+}
+
+#navigation_middle_menu li {
+    padding-left: 45px;
+    padding-right: 56px;
+}
+
+.more4 {
+    position: absolute;
+    top: 4px;
+    left: 842px;
+}
+
+#studentNewMidlle ul li {
+    height: 26px;
+    line-height: 13px;
+}
+
+#studentNewMidlle ul li a {
+    background-position: -2% 50%;
+}
+
+#classfy_middle_main li {
+
+    background-size: 227px;
+}
+
+.line14 {
+    position: absolute;
+    z-index: 1;
+    top: 40px;
+    left: 50px;
+}
+
+.line14 ul li {
+    width: 187px;
+    border-bottom: 1px solid #0b90d1;
+    padding-bottom: 30px;
+}
+
+#classfy_middle_main li {
+    border-bottom: 1px solid #0b90d152;
+    background-position: 13% 228%;
+    height: 31px;
+}
+
+#classfy_middle_main li a {
+    height: 33px;
+    line-height: 34px;
+}
+
+#good_introduce_left_middle ul li a img, #ratherPrice_middle ul li a img {
+    width: 99px;
+    height: 74px;
+}

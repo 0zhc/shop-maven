@@ -1,0 +1,7 @@
+@charset "utf-8";
+/* CSS Document */
+.myshop{ border-collapse:collapse;  width:964px; border:#CCC solid 1px; color:#333;}
+
+.myshop td{border-left:#CCC solid 1px; border-bottom:#CCC solid 1px; font-size:12px;}
+.myshop tr td a{ font-size:13px; text-decoration:none; padding-left:10px; color:red;}
+.myshop tr td a:hover{text-decoration:underline; color:red;}

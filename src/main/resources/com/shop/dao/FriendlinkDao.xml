@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shop.dao.FriendlinkDao">
+    <insert id="addFriendLink">
+        insert into friendlink
+        values (null, #{friendlink.shopId}, #{friendlink.urlText}, #{friendlink.url}, #{friendlink.inTime},
+                #{friendlink.tag});
+    </insert>
+    <update id="modifyFriendlink">
+        update friendlink
+        set urlText=#{LinkName},
+            url=#{LinkUrl}
+        where id = #{id}
+    </update>
+
+    <select id="findFriendlinkByShopId" resultType="com.shop.entity.Friendlink">
+        select *
+        from friendlink
+        where shopId = #{shopId}
+        order by id asc
+    </select>
+</mapper>

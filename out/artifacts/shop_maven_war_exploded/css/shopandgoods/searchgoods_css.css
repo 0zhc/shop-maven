@@ -1,0 +1,15 @@
+#main_right_middle ul li {
+    margin-top: 13px;
+}
+.line1 {
+    left: 303px;
+}
+.line2 {
+    left: 604px;
+}
+#trade_record ul, #collect_file ul {
+    top: 30px;
+}
+.selectItemhidden {
+    left: 861px !important;
+}

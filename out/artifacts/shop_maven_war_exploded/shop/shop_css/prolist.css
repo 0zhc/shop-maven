@@ -1,0 +1,50 @@
+*{ margin:0px; padding:0px;}
+
+/*shop_advertisement*/
+#shop_advertisement{ height:238px;}
+#shop_advertisement img{ width:942px; height:238px;}
+
+/*hot_product,new_product,tow_hand_product,other_product*/
+#hot_product,#new_product,#old_product{ height:260px;  margin-top:10px; border:#d9d9d9 solid 1px; overflow: hidden; position: relative;}
+#other_product{width:778px; overflow:auto; clear:both; margin-top:10px; border:#d9d9d9 solid 1px;}
+
+#hotpro_litle,#newpro_litle,#oldpro_litle,#otherpro_litle{ height:34px;  position:relative;}
+
+#hot_letter,#new_letter,#old_letter,#other_letter,.letter_right_back{ float:left;}
+
+#hot_letter,#new_letter,#old_letter,#other_letter{ height:26px; width:114px; padding-left:25px; padding-top:8px; font-size:15px; font-family:����; color:#fffcfc; font-weight:bold; background:url(../shop_image/pro_litle_back.jpg) no-repeat; }
+
+.letter_right_back{ height:34px; width:639px; background:url(../shop_image/letter_right_back.jpg); }
+
+#otherpro_content{overflow:auto;clear:both;}
+
+#hotpro_content ul,#newpro_content ul,#oldpro_content ul{ float:left; height:226px; list-style-type:none; margin-left:7px; }
+#otherpro_content ul{float:left;list-style-type:none; margin-left:7px; }
+
+#hotpro_content ul li,#newpro_content ul li,#oldpro_content ul li{ float:left; height:217px; padding-top:7px; padding-left:7px; position:relative; }
+#otherpro_content ul li{float:left; padding-top:7px; padding-left:7px; position:relative;}
+
+#hotpro_content ul li a img,#newpro_content ul li a img,#oldpro_content ul li a img,#otherpro_content ul li a img{  width:177px; height:118px; border:#F3F3F3 solid 1px;}
+.pro_name{ display:block; line-height:25px;}
+.pro_price{ display:block; line-height:25px; background:url(../shop_image/pro_price.jpg) no-repeat 35px 5px; padding-left:100px; font-size:15px; font-family:����; color:#fe4800; }
+
+.buy{position:absolute; top:185px; left:25px; width:55px; height:23px; background:url(../shop_image/buy.jpg) no-repeat;  }
+.collect{position:absolute; top:185px; left:105px; width:55px; height:23px; background:url(../shop_image/collect.jpg) no-repeat;}
+
+.pro_name{ text-align:center;}
+.pro_name a{ font-size:13px; font-family:����; color:#0185d0; text-decoration:none; text-align:center; }
+.pro_name a:hover{ color:#fe4800;}
+
+/*messforbussin*/
+#contain_mess{height:950px;}
+#messforbussin{ border:#000033 solid 1px;}
+#messages_top{width:770px; background-image:url(../shop_image/goodsdescripTipTop.jpg); height:50px; }
+#page a{ font-size:13px; text-decoration:none; margin-left:10px; color:#8e8d8d;}
+#page a:hover{text-decoration:underline;}
+.leaveMesser{ color:#188ad5;}
+
+#mess_box{margin-top:15px; padding-top:10px; border-top:#D9D9D9 dashed 1px; }
+#mess_text{width:670px; height:230px; }
+.leaveMesser{font-size:15px; font-weight:900; padding-left:10px;}
+#anonymity{height:18px; width:18px;}
+#anonymity_text{color:#242424; font-size: 14px; font-family:����;}

@@ -1,0 +1,36 @@
+
+@charset "utf-8";
+/* CSS Document */
+*{margin:px; padding:0px;}
+img{border:none;}
+#main_left,#main_right{ float:left; }
+#shopIntroduct_top{ width:206px; height:63px; background-image:url(../../images/searchshopgood/shopIntroduct_top.jpg); background-repeat:no-repeat;}
+#shopIntroduct_middle{ width:198px; height:685px; background-image:url(../../images/searchshopgood/shopIntroduct_middle.jpg); background-repeat:no-repeat; background-repeat:repeat-y;}
+#shopIntroduct_bottom{width:206px; height:7px; background-image:url(../../images/searchshopgood/shopIntroduct_bottom.jpg); background-repeat:no-repeat;}
+#search_shopIntroduct_top{ width:766px; height:46px; background-image:url(../../images/searchshopgood/search_shopIntroduct_top.jpg); background-repeat:no-repeat;}
+#search_shopIntroduct_middle{ width:756px; height:700px; background-image:url(../../images/searchshopgood/search_shopIntroduct_middle.jpg);
+background-repeat:repeat-y; padding-left:5px; padding-right:5px;}
+#search_shopIntroduct_bottom{width:766px; height:10px; background-image:url(../../images/searchshopgood/search_shopIntroduct_bottom.jpg); background-repeat:no-repeat;}
+.describle{ font-size:13px; text-align:center; color:#717172; line-height:20px;}
+.goShop a{ text-decoration:none; color: #CD2B05; font-weight:600; }
+.goShop a:hover{ text-decoration:underline; color: #104D77;}
+#shopIntroduct_middle{padding-left:4px; padding-right:4px;}
+#shopIntroduct_middle ul li{ border-bottom:#CCCCCC dotted 1px; margin-top:18px;}
+#show_shop_tip{ background-image:url(../../images/searchshopgood/searchTipline.jpg); background-repeat:repeat-x; background-position:bottom center; padding-bottom:10px; color:#1f89d4;  font-size:14px; font-weight:900;}
+#show_shop_search ul li{ float:left; font-size:14px;}
+.sort { position:absolute; display:none;  margin-left:50px;}
+.sort li{  float:left; width:40px;}
+.sort li a{display:block; text-decoration:none;color:#048dd9; }
+
+
+#page a{ font-size:14px; text-decoration:none; margin-left:10px; color:#8e8d8d;}
+#page a:hover{text-decoration:underline;}
+#main_right_top{ width:206px; height:65px; background-image:url(../../images/searchshopgood/introduct_top.jpg); background-repeat:no-repeat;}
+#showShop a{ text-decoration:none;}
+#showShop a:hover{text-decoration:underline;}
+#showShop ul li{float:left; line-height:100px;}
+#showShop ul li div{float:left;}
+.searchDescripright li{ clear:both; line-height:20px; font-size:13px;}
+
+#showShop{ font-size:14px; }
+.showShopMain{ border-bottom:#CCCCCC dotted 1px; height:100px;}

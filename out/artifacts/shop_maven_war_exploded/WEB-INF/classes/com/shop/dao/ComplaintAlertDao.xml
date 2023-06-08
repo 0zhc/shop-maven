@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shop.dao.ComplaintAlertDao">
+    <insert id="addComplaintAlert">
+        insert into complaint_alert values (null ,#{complaintAlert.PreRightId},#{complaintAlert.userId},#{complaintAlert.title},#{complaintAlert.alertContent},#{complaintAlert.alertTime},#{complaintAlert.tag});
+    </insert>
+    <update id="deleteComplaintAlertById">
+        update complaint_alert set tag=2 where id=#{id}
+    </update>
+    <select id="getTotal" resultType="java.lang.Integer">
+        select count(*) from complaint_alert as c where c.userId=#{userId} and c.tag=1
+    </select>
+    <select id="findComplaintAlertByUserId" resultType="com.shop.entity.ComplaintAlert">
+        select * from complaint_alert where userId=#{userId} and tag=1 limit #{start},#{max}
+    </select>
+    <select id="getComplaintAlertById" resultType="com.shop.entity.ComplaintAlert">
+        select * from complaint_alert where id=#{id} and tag=1
+    </select>
+    <select id="totalComplaintAlert" resultType="java.lang.Integer">
+        select count(*) from complaint_alert where tag=1
+    </select>
+    <select id="findComplaintAlert" resultType="com.shop.entity.ComplaintAlert">
+        select * from complaint_alert where  tag=1 limit #{beginIndex},#{max}
+    </select>
+    <select id="findComplaintAlertById" resultType="com.shop.entity.ComplaintAlert">
+        select * from complaint_alert where userId=#{userId} and tag=1
+    </select>
+</mapper>

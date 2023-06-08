@@ -1,0 +1,27 @@
+*{padding:0px; margin:0px;}
+ul,li{ list-style:none;}
+#banner {
+    position: absolute;
+    top: 30px;
+    left: 16px;
+}
+#banner img {
+    width: 1200px;
+    height: 58px;
+}
+img{ border:none;}
+#main_right,#main_left{ float:left;}
+.searchGoodsTip{ color:#048dd9; font-size:14px; font-weight:900; background-image:url(../../images/searchshopgood/searchTipline.jpg); background-repeat:repeat-x; background-position:bottom center; margin-bottom:10px; padding-top:20px;}
+.searchGoodTipSearch ul li{list-style:none; float:left; color:#414141; font-size:14px; line-height:25px;}
+.sort { position:absolute; display:none;  margin-left:50px;}
+.sort li{  float:left; width:40px;}
+.sort li a{display:block; text-decoration:none;color:#048dd9; }
+#buyOrStore li{float:left;}
+.showGoods{ margin-bottom:10px;}
+.showGoods li{float:left; margin-right:10px; margin-left:10px; border:#FFFFFF solid 1px;}
+#page a{ font-size:14px; text-decoration:none; margin-left:10px; color:#8e8d8d;}
+#page a:hover{text-decoration:underline;}
+#main_right_top{ width:206px; height:65px; background-image:url(../../images/searchshopgood/introduct_top.jpg); background-repeat:no-repeat;}
+#main_right_middle{width:206px; height:850px; background-image:url(../../images/searchshopgood/introduct_middle.jpg); background-repeat:repeat-y;}
+#main_right_bottom{width:206px; height:16px; background-image:url(../../images/searchshopgood/introduct_bottom.jpg);}
+#main_right_middle ul li{border-bottom:#CCCCCC dotted 1px;}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shop.dao.LoginDao">
+    <insert id="add">
+        insert into user values(null ,#{version},#{userName},#{userPassword},#{callName},#{email},#{qq},#{sex},#{identityld},null,null,null,#{createDate},#{sysRole},#{userType},#{tag},null,null)
+    </insert>
+
+    <select id="isExist" resultType="long">
+        select count(*) from User u where u.userName=#{userName} and u.userPassword=#{userPassword} and u.tag=1 and u.sysRole=#{userType}
+    </select>
+    <select id="findUserByUserName" resultType="java.lang.Integer">
+        select count(*) from User u where u.userName=#{userName}
+    </select>
+    <select id="getUserByUserName" resultType="com.shop.entity.User">
+        select * from User u where u.userName=#{userName}
+    </select>
+
+</mapper>

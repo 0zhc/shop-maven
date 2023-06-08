@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shop.dao.ComplaintDao">
+    <insert id="saveComplaint">
+        insert into complaint
+        values (null, #{complaint.tradeId}, #{complaint.userId}, #{complaint.complaintId}, #{complaint.complain},
+                #{complaint.detailreason}, #{complaint.complaintTime}, #{complaint.adminReply}, #{complaint.alertType},
+                #{complaint.tag})
+    </insert>
+    <update id="deleteComplaint">
+        update complaint
+        set tag=2
+        where id = #{id}
+    </update>
+    <update id="deleteComplaintByTradeId">
+        update complaint
+        set tag=2
+        where tradeId = #{tradeId}
+    </update>
+    <update id="updateComplaintById">
+        update complaint
+        set alertType=2
+        where id = #{id}
+    </update>
+    <update id="updateAdminReplyById">
+        update complaint
+        set adminReply=3
+        where id = #{id}
+          and tag = 1
+    </update>
+    <update id="updateComplaintAdminReply">
+        update complaint
+        set adminReply=2
+        where id = #{id}
+          and tag = 1
+    </update>
+    <select id="getTotalSize" resultType="java.lang.Integer">
+        select count(*)
+        from complaint as c
+        where c.id = #{userId}
+          and c.tag = 1
+    </select>
+    <select id="findComplaint" resultType="com.shop.entity.Complaint">
+        select *
+        from complaint
+        where tradeId = #{tradeId}
+          and tag = 1
+    </select>
+    <select id="getComplaintById" resultType="com.shop.entity.Complaint">
+        select *
+        from complaint
+        where id = #{id}
+          and tag = 1
+    </select>
+    <select id="getTotal" resultType="java.lang.Integer">
+        select count(*)
+        from complaint as c
+        where c.complaintId = #{complaintId}
+          and c.tag = 1
+        order by c.complaintTime desc
+    </select>
+    <select id="findComplaintByComplaintId" resultType="com.shop.entity.Complaint">
+        select *
+        from complaint as c
+        where c.complaintId = #{complaintId}
+          and c.tag = 1
+        order by c.complaintTime desc limit #{start}, #{max}
+    </select>
+    <select id="findAllComplaint" resultType="com.shop.entity.Complaint">
+        select *
+        from complaint
+        where tag = 1
+    </select>
+    <select id="getTotalComplaint" resultType="java.lang.Integer">
+        select count(*)
+        from complaint
+        where tag = 1
+    </select>
+    <select id="ComplaintByComplaintId" resultType="com.shop.entity.Complaint">
+        select *
+        from complaint as c
+        where c.complaintId = #{complaintId}
+          and c.tag = 1
+        order by c.complaintTime desc
+    </select>
+</mapper>

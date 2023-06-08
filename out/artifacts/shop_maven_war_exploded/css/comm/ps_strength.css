@@ -1,0 +1,26 @@
+	<!-- 密码强度框css样式 -->
+
+	*{ padding:0px; margin:0px;}
+
+  	#passwordStrength{
+		display:none;
+	}
+			
+	#passwordStrength ul{ 
+		list-style-type:none;
+		height:15px; 
+		width:141px;
+		border-color:#cccccc; 
+		border-width:2px 0px 2px 2px; 
+		border-style:solid;
+		background-color:#eeeeee; 
+	}
+		
+	#passwordStrength ul li{ 
+		float:left;  
+		width:30px; 
+		padding-left:15px; line-height:15px;
+		color:#404040; font-family:宋体; font-size:12px; 
+		border-right:#cccccc solid 2px;  
+	}
+

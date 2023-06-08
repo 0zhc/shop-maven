@@ -1,0 +1,7 @@
+#foot_main ul {
+    position: absolute;
+    z-index: 999;
+    top: 19px;
+    left: 0px;
+    width: 422px;
+}

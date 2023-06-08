@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 扫描注解实例化bean，排除@Controller -->
+    <context:component-scan base-package="com.shop">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+    <import resource="classpath:spring-mybatis.xml"/>
+    <import resource="classpath:spring-transaction.xml"/>
+
+</beans>
+
+        <!--<?xml version="1.0" encoding="UTF-8"?>-->
+
+        <!--&lt;!&ndash;-->
+        <!--  - Application context definition for JPetStore's business layer.-->
+        <!--  - Contains bean references to the transaction manager and to the DAOs in-->
+        <!--  - dataAccessContext-local/jta.xml (see web.xml's "contextConfigLocation").-->
+        <!--  &ndash;&gt;-->
+        <!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+        <!--       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+        <!--       xmlns:context="http://www.springframework.org/schema/context"-->
+        <!--       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">-->
+
+
+        <!--    &lt;!&ndash; 扫描注解实例化bean，排除@Controller &ndash;&gt;-->
+        <!--    <context:component-scan base-package="com.shop">-->
+        <!--        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>-->
+        <!--    </context:component-scan>-->
+
+        <!--    <import resource="classpath:spring-mybatis.xml"/>-->
+        <!--&lt;!&ndash;    <import resource="classpath:spring/spring-context-transaction.xml"/>&ndash;&gt;-->
+
+
+        <!--&lt;!&ndash;&lt;!&ndash;    <context:component-scan base-package="com.shop.entity"></context:component-scan>&ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;    <context:property-placeholder location="jdbc.properties"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;    &lt;!&ndash;数据源&ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">&ndash;&gt;-->
+        <!--&lt;!&ndash;        <property name="driverClassName" value="${jdbc.driver}"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;        <property name="url" value="${jdbc.url}"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;        <property name="username" value="${jdbc.username}"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;        <property name="password" value="${jdbc.password}"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;    </bean>&ndash;&gt;-->
+        <!--&lt;!&ndash;    &lt;!&ndash;SqlSessionFactoryBean&ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;    <bean class="org.mybatis.spring.SqlSessionFactoryBean">&ndash;&gt;-->
+        <!--&lt;!&ndash;        &lt;!&ndash;mybatis核心配置文件路径&ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;        <property name="configLocation" value="mybatis-config.xml"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;        &lt;!&ndash;注入数据源&ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;        <property name="dataSource" ref="dataSource"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;        &lt;!&ndash;起别名&ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;        <property name="typeAliasesPackage" value="com.cjmqy.shop.entity"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;    </bean>&ndash;&gt;-->
+
+
+        <!--&lt;!&ndash;    &lt;!&ndash;事务管理器&ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;    <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">&ndash;&gt;-->
+        <!--&lt;!&ndash;        <property name="dataSource" ref="dataSource"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;    </bean>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;    &lt;!&ndash;开启事务注解&ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;    <tx:annotation-driven transaction-manager="txManager"/>&ndash;&gt;-->
+
+        <!--</beans>-->

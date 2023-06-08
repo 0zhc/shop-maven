@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Media</title>
+    <link href="../skins/default.css" rel="stylesheet"/>
+    <style rel="stylesheet" type="text/css">
+        body {
+            margin: 0;
+            font: 12px/1.5 "sans serif", tahoma, verdana, helvetica;
+            background-color: #F0F0EE;
+            color: #222222;
+            overflow: hidden;
+        }
+
+        label {
+            cursor: pointer;
+        }
+
+        .main {
+            margin: 0 10px;
+        }
+
+        .table {
+            list-style-image: none;
+            list-style-position: outside;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: block;
+        }
+
+        .table li {
+            padding: 0;
+            margin-bottom: 10px;
+            display: list-item;
+            line-height: 1.5;
+        }
+
+        .table li label {
+            font-weight: bold;
+        }
+    </style>
+    <script type="text/javascript">
+        var KE = parent.KindEditor;
+        var id = KE.util.getParam(location.href, 'id');
+        KE.event.ready(function () {
+            var urlBox = KE.$('url', document);
+            KE.util.pluginLang('media', document);
+            KE.util.hideLoadingPage(id);
+            urlBox.focus();
+            urlBox.select();
+        }, window, document);
+    </script>
+</head>
+<body>
+<div class="main">
+    <ul class="table">
+        <li>
+            <label class="ke-inline-block" for="url"><span id="lang.url"></span></label>
+            <input class="ke-inline-block ke-text-input" id="url" maxlength="255" name="url" style="width:90%;"
+                   type="text" value="http://"/>
+        </li>
+        <li>
+            <label class="ke-inline-block" for="width"><span id="lang.width"></span></label>&nbsp;
+            <input class="ke-inline-block ke-text-input" id="width" maxlength="4" name="width"
+                   style="width:50px;text-align:right;" type="text" value="550"/> px
+        </li>
+        <li>
+            <label class="ke-inline-block" for="height"><span id="lang.height"></span></label>&nbsp;
+            <input class="ke-inline-block ke-text-input" id="height" maxlength="4" name="height"
+                   style="width:50px;text-align:right;" type="text" value="400"/> px
+        </li>
+        <li>
+            <label class="ke-inline-block" for="autostart"><span id="lang.autostart"></span></label>&nbsp;
+            <input id="autostart" name="autostart" type="checkbox" value="1"/>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

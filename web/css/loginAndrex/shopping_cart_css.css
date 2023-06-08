@@ -1,0 +1,26 @@
+.backg3 {
+    top: 0px;
+}
+
+#footer {
+    position: relative;
+
+}
+
+.line2 {
+    top: 25px !important;
+    left: 643px !important;
+}
+
+.pos {
+    left: 50%;
+    margin-left: -602px;
+}
+
+#car_img {
+    height: 335px;
+}
+
+#car_div_top {
+    margin-top: 151px !important;
+}

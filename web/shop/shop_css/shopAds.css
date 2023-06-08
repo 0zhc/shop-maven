@@ -1,0 +1,130 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+ul, li {
+    list-style: none;
+}
+
+
+.ad {
+    width: 942px;
+    height: 351px;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider, .num {
+    position: absolute;
+}
+
+.slider li {
+    display: inline;
+}
+
+.slider li a img {
+    display: block;
+    border: none;
+}
+
+.num {
+    right: 30px;
+    bottom: 20px;
+}
+
+.num li {
+    float: left;
+    width: 15px;
+    text-align: center;
+    background-image: url(../../images/index/ads_count_backgroud.jpg);
+    background-repeat: no-repeat;
+    margin-left: 5px;
+    height: 15px;
+}
+
+.num li span {
+    display: block;
+    font-size: 12px;
+    font-family: ����;
+    font-weight: bolder;
+}
+
+.on {
+    background-image: url(../../images/index/ads_count_hover.jpg);
+    background-repeat: no-repeat;
+    color: #FFFFFF;
+}
+
+.begeinColor {
+    color: #069dee;
+}
+
+#shop_advertisement img {
+    width: 942px;
+    height: 351px;
+}
+
+#shop_advertisement {
+    width: 942px;
+}
+
+body, html, iframe {
+    width: 942px;
+}
+
+#hot_product, #new_product, #old_product {
+    top: 122px;
+}
+
+.letter_right_back {
+    width: 801px;
+}
+
+#hotpro_content ul li, #newpro_content ul li, #oldpro_content ul li {
+    padding-left: 41px;
+}
+
+#other_product {
+    width: 940px;
+    margin-top: 136px;
+}
+
+#otherpro_content ul li {
+    padding-left: 41px;
+}
+
+.buy, .collect {
+    top: 185px;
+}
+
+.buy {
+    left: 61px;
+}
+
+.collect {
+    left: 135px;
+}
+
+#mess_text {
+    width: 943px;
+}
+
+#messages_top {
+    background-size: 945px;
+    height: 61px;
+}
+
+#messages {
+    width: 942px !important;
+}
+
+table {
+    width: 942px;
+}
+
+#Scoptip, #Businesstip, #Contacttip, #shoppingtip {
+    width: 926px !important;
+    background-size: 926px !important;
+    height: 57px;
+}

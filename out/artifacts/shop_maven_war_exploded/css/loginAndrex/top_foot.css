@@ -1,0 +1,200 @@
+@charset "utf-8";
+/* CSS Document */
+/*控制 top*/
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+ul, li {
+    list-style: none;
+}
+.backg2 {
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    background-color: #f1f1f1;
+}
+#top {
+    position: relative;
+    z-index: 3;
+    height: 30px;
+    line-height: 30px;
+}
+
+#top_left, #top_right {
+    color: #393939;
+    font-size: 12px;
+    font-family: "宋体";
+}
+
+#top_left li, #top_right li {
+    margin-right: 10px;
+    background-image: url(../images/index/top_line.jpg);
+    background-repeat: no-repeat;
+    background-position: right top;
+    padding-right: 5px;
+}
+
+#top_left {
+    margin-right: 250px;
+}
+
+#top_login a, top_rigister a {
+    color: #838383;
+}
+
+#top_left li a, #top_right li a {
+    color: #393939;
+    font-size: 12px;
+    font-family: "宋体";
+    text-decoration: none;
+}
+
+#shop_car {
+    background-image: url(../../images/index/shop_car.jpg);
+    background-repeat: no-repeat;
+    padding-left: 16px;
+    background-position: left top;
+}
+
+#top_left {
+    float: left;
+}
+#top_right {
+    float: right;
+    margin-right: -41px;
+}
+#top_left li, #top_right li {
+    float: left;
+}
+
+#top ul li a:hover {
+    color: #0b90d1;
+    text-decoration: underline;
+}
+
+.trade_main, .store_main {
+    display: none;
+    background-image: url(../../images/index/top_background.jpg);
+    background-repeat: repeat-x;
+    line-height: 23px;
+    width: 80px;
+}
+
+#trade_record, #collect_file {
+}
+
+#collect_file {
+    width: 90px;
+}
+
+#trade_record a, #collect_file a {
+    display: block;
+}
+
+#trade_record ul, #collect_file ul {
+    position: absolute;
+    padding-left: 4px;
+}
+
+#trade_record ul li, #collect_file ul li {
+    float: left;
+}
+
+
+/*控制foot*/
+#foot_main ul {
+    padding-left: 408px;
+}
+#footer {
+    position: relative;
+}
+#foot_main ul li {
+    float: left;
+    width: 100px;
+}
+
+#foot_main ul li a {
+    color: #8c8c8c;
+    font-size: 12px;
+    font-family: "宋体";
+    text-decoration: none;
+}
+
+#foot_main ul li a:hover {
+    color: #1ca9e1;
+}
+
+#foot_main ul {
+    position: absolute;
+    z-index: 999;
+    top: 19px;
+    left: 163px;
+    width: 422px;
+}
+.backg3 {
+    position: absolute;
+    top: 546px;
+    width: 100%;
+    height: 169px;
+    background-color: #f1f1f1;
+}
+#footer {
+    padding-top: 20px;
+}
+.line2 {
+    position: absolute;
+    z-index: 3;
+    top: 569px;
+    left: 496px;
+}
+
+.line2 ul li{
+    float: left;
+    margin-right: 99px;
+    height: 14px;
+    width: 1px;
+    border-left: 1px solid #d7d7d7;
+}
+.line3 {
+    position: absolute;
+    z-index: 2;
+    top: 8px;
+    left: 923px;
+}
+.line3 ul li{
+    float: left;
+    margin-right: 63px;
+    height: 14px;
+    width: 1px;
+    border-left: 1px solid #d7d7d7;
+}
+.line4 {
+    position: absolute;
+    z-index: 2;
+    top: 8px;
+    left: 941px;
+}
+.line4 ul li{
+    float: left;
+    margin-left: 101px;
+    height: 14px;
+    width: 1px;
+    border-left: 1px solid #d7d7d7;
+}
+.line5 {
+    position: absolute;
+    width: 2px;
+    z-index: 3;
+    top: 8px;
+    left: 184px;
+}
+.line5 ul li{
+    float: left;
+    margin-right: 63px;
+    height: 14px;
+    width: 1px;
+    border-left: 1px solid #d7d7d7;
+}
+

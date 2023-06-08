@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shop.dao.GoodsDao">
+    <update id="updateGoods">
+        update goods set amount=#{goods.amount} where id=#{goods.id}
+    </update>
+    <update id="ModifyGoodsById">
+        update goods set name=#{good.name},description=#{good.description},price=#{good.price},Brand=#{good.brand},Size=#{good.size},amount=#{good.amount},color=#{good.color},
+                         origin=#{good.origin},weight=#{good.weight},ProductAdd=#{good.productAdd},sizeUnit=#{good.sizeUnit},amountUnit=#{good.amountUnit},createDate=#{good.createDate},grossUnit=#{good.grossUnit} where id=#{goodsId}
+    </update>
+    <update id="deleteGoodsById">
+        update goods set tag=2 where id=#{goodsId}
+    </update>
+    <select id="getUserGoods" resultType="com.shop.entity.Goods">
+        select * from goods where shopId=#{shopId} and tag=1
+    </select>
+    <select id="findGoodsById" resultType="com.shop.entity.Goods">
+        select * from goods where id=#{id}
+    </select>
+    <select id="getAllGoodses" resultType="com.shop.entity.Goods">
+        select * from goods where goodsIsNew=#{isNew} and price>#{beginPrice} and price  <![CDATA[<=]]> #{endPrice} and name like concat('%',#{name},'%') and tag=1
+        <if test="isSore == 1">
+            order by price asc
+        </if>
+        <if test="isSore != 1">
+            order by price desc
+        </if>
+         limit #{begin},#{RecordCount}
+    </select>
+    <select id="getAllGoodsCount" resultType="java.lang.Integer">
+        select count(*) from goods where goodsIsNew=#{isNew} and price>#{beginPrice} and price  <![CDATA[<=]]> #{endPrice} and name like concat('%',#{name},'%') and tag=1
+    </select>
+    <select id="count" resultType="java.lang.Integer">
+        select count(*) from goods g ,shop s where s.userId=#{userId} and g.shopId=s.id and  g.tag=1 and g.goodsType=#{goodType}
+        <if test="name != null and name != ''">
+            and g.name like concat('%',#{name},'%')
+        </if>
+
+    </select>
+    <select id="goodses" resultType="com.shop.entity.Goods">
+        select g.id,g.shopId,g.name,g.description,g.CommQuality,g.goodsURL,g.ProductAdd,g.color,g.weight,g.Brand,g.Size,g.price,g.amount,g.Origin,g.sizeUnit,g.grossUnit,g.amountUnit,g.createDate,g.goodsType,g.goodsIsNew,g.url,g.tag from goods g ,shop s where s.userId=#{userId} and g.shopId=s.id and  g.tag=1 and g.goodsType=#{goodType}
+        <if test="name != null and name != ''">
+            and g.name like concat('%',#{name},'%')
+        </if>
+        limit #{begin},#{RecordCount}
+    </select>
+</mapper>

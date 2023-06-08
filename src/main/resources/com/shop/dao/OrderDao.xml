@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shop.dao.OrderDao">
+    <insert id="saveOrder" useGeneratedKeys="true" keyProperty="goodsOrder.id"
+            parameterType="com.shop.entity.GoodsOrder">
+        insert into goods_order
+        values (null, #{goodsOrder.userId}, #{goodsOrder.OrderNum}, #{goodsOrder.goodId}, #{goodsOrder.amount},
+                #{goodsOrder.total}, #{goodsOrder.TradeTime}, #{goodsOrder.state}, #{goodsOrder.tag})
+    </insert>
+    <insert id="saveReceiveAddress">
+        insert into receive_address
+        values (null, #{receiveAddress.orderId}, #{receiveAddress.receiverName}, #{receiveAddress.address},
+                #{receiveAddress.phone}, #{receiveAddress.shortPhone}, #{receiveAddress.tag})
+    </insert>
+    <update id="updateGoodsOrderById">
+        update goods_order
+        set state=#{state}
+        where id = #{goodsOrderId}
+          and tag = 1
+    </update>
+    <delete id="deleteGoodsOrder">
+        update goods_order
+        set tag=2
+        where id = #{id}
+    </delete>
+    <select id="getTotal" resultType="java.lang.Integer">
+        select count(*)
+        from goods_order as g
+        where userId = #{userId}
+          and g.tag = 1
+          and g.state = #{state}
+        order by g.tradeTime desc
+    </select>
+    <select id="getIsSoleTotalByUserId" resultType="java.lang.Integer">
+        SELECT COUNT(*)
+        FROM goods_order go, goods g, shop s
+        WHERE g.shopId=s.id AND go.goodId=g.id AND s.userId=#{userId} AND go.tag=1
+        ORDER BY go.TradeTime DESC
+    </select>
+    <select id="findIsSoleGoodsOrdersByUserId" resultType="com.shop.entity.GoodsOrder">
+        SELECT go.id,
+               go.userId,
+               go.OrderNum,
+               go.GoodId,
+               go.amount,
+               go.total,
+               go.TradeTime,
+               go.state,
+               go.tag
+        FROM goods_order go, goods g, shop s
+        WHERE g.shopId=s.id AND go.goodId=g.id AND s.userId=#{userId} AND go.tag=1
+        ORDER BY go.TradeTime DESC
+    </select>
+    <select id="findIsBuyGoodsOrdersByUserId" resultType="com.shop.entity.GoodsOrder">
+        select *
+        from goods_order
+        where userId = #{userId}
+          and tag = 1 limit #{start}
+            , #{max}
+    </select>
+    <select id="getIsBuyTotalByUserId" resultType="java.lang.Integer">
+        select count(*)
+        from goods_order
+        where userId = #{userId}
+          and tag = 1
+    </select>
+    <select id="getGoodsOrderById" resultType="com.shop.entity.GoodsOrder">
+        select *
+        from goods_order
+        where id = #{id}
+          and tag = 1
+    </select>
+    <select id="getReceiveAddressByGoodsOrderId" resultType="com.shop.entity.ReceiveAddress">
+        select *
+        from receive_address
+        where orderId = #{orderId}
+          and tag = 1
+    </select>
+    <select id="findIsSoleGoodsOrdersCountByCondition" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM goods_order go, goods g, shop s WHERE g.shopId=s.id AND go.goodId=g.id AND
+        s.userId=#{userId} AND go.tag=1
+        <if test="startTime != '' and startTime !=null and endTime != '' and endTime !=null">
+            and go.TradeTime >= date(#{startTime}) and go.TradeTime <![CDATA[<=]]> date(#{endTime})
+        </if>
+        <if test="orderNum != '' and orderNum !=null ">
+            and go.OrderNum like concat('%',#{orderNum},'%')
+        </if>
+        <if test="state != 0">
+            and go.state=#{state}
+            ORDER BY go.TradeTime DESC
+        </if>
+
+    </select>
+    <select id="findIsSoleGoodsOrdersByCondition" resultType="com.shop.entity.GoodsOrder">
+        SELECT go.id,go.userId,go.OrderNum,go.GoodId,go.amount,go.total,go.TradeTime,go.state, go.tag FROM goods_order
+        go, goods g, shop s WHERE g.shopId=s.id AND go.goodId=g.id AND s.userId=#{userId} AND go.tag=1
+        <if test="startTime != '' and startTime !=null and endTime != '' and endTime !=null">
+            and go.TradeTime >= date(#{startTime}) and go.TradeTime <![CDATA[<=]]> date(#{endTime})
+        </if>
+        <if test="orderNum != '' and orderNum !=null ">
+            and go.OrderNum like concat('%',#{orderNum},'%')
+        </if>
+        <if test="state != 0">
+            and go.state=#{state}
+        </if>
+        ORDER BY go.TradeTime DESC
+        limit #{beginIndex},#{max}
+    </select>
+    <select id="findIsBuyGoodsOrdersCountByCondition" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM goods_order go WHERE go.userId=#{userId} AND go.tag=1
+        <if test="startTime != '' and startTime !=null and endTime != '' and endTime !=null">
+            and go.TradeTime >= date(#{startTime}) and go.TradeTime <![CDATA[<=]]> date(#{endTime})
+        </if>
+        <if test="orderNum != '' and orderNum !=null ">
+            and go.OrderNum like concat('%',#{orderNum},'%')
+        </if>
+        <if test="state != 0">
+            and go.state=#{state}
+            ORDER BY go.TradeTime DESC
+        </if>
+    </select>
+    <select id="findIsBuyGoodsOrdersByCondition" resultType="com.shop.entity.GoodsOrder">
+        SELECT go.id,go.userId,go.OrderNum,go.GoodId,go.amount,go.total,go.TradeTime,go.state, go.tag FROM goods_order
+        go WHERE go.userId=#{userId} AND go.tag=1
+        <if test="startTime != '' and startTime !=null and endTime != '' and endTime !=null">
+            and go.TradeTime >= date(#{startTime}) and go.TradeTime <![CDATA[<=]]> date(#{endTime})
+        </if>
+        <if test="orderNum != '' and orderNum !=null ">
+            and go.OrderNum like concat('%',#{orderNum},'%')
+        </if>
+        <if test="state != 0">
+            and go.state=#{state}
+        </if>
+        ORDER BY go.TradeTime DESC
+        limit #{beginIndex},#{max}
+    </select>
+    <select id="getTotalUNSHIPPED" resultType="java.lang.Integer">
+        SELECT COUNT(*)
+        FROM goods_order go, goods g, shop s
+        WHERE g.shopId=s.id
+          AND go.goodId=g.id
+          AND s.userId=#{userId}
+          AND go.state=#{state}
+          and go.tag=1
+        ORDER BY go.TradeTime DESC
+    </select>
+</mapper>

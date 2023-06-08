@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* CSS Document */
+
+#content {
+	width: 530px;
+	font-size:14px;
+}
+table td {
+	border-right: 1px solid #CCC;
+	border-bottom: 1px solid #CCC;
+}
+table {
+	border-top: 1px solid #CCC;
+	border-left: 1px solid #CCC;
+}
+table th { background-color:#CCC;
+border-right: 1px solid #999;
+	border-bottom: 1px solid #999;
+}
+/*a { color:#666; text-decoration:none;}*/
+a:hover {top:1px; left:1px; position:relative;}
+
+input { width:50px;}

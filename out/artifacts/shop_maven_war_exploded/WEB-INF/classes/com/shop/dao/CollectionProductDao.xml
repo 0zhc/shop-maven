@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.shop.dao.CollectionProductDao">
+
+    <insert id="save">
+        insert into collection_goods value(null,#{collectionGoods.userId},#{collectionGoods.goodsId},#{collectionGoods.storeDate},#{collectionGoods.tag})
+    </insert>
+    <update id="collectionGoodDeleteByGoodsId">
+        update collection_goods set tag =2 where userId=#{userId} and goodsId=#{goodsId}
+    </update>
+
+
+    <select id="collectionGoodsCountByUserId" resultType="java.lang.Integer">
+        select count(*) from collection_goods where userId=#{userId} and tag=1
+    </select>
+    <select id="collectionProductFindByUserId" resultType="com.shop.entity.CollectionGoods">
+        select * from collection_goods where userId=#{userId} and tag=1 order by storeDate desc limit #{begin},#{recordCount}
+    </select>
+    <select id="collectionGoodSelectAllShop" resultType="com.shop.entity.CollectionGoods">
+        select cg.id,cg.userId,cg.goodsId,cg.storeDate,cg.tag from collection_goods cg join goods g on cg.goodsId = g.id where cg.userId=#{userId} and cg.tag=1 and g.tag=1
+        <if test="datetime1 != '' and datetime2 != ''">
+            and date(cg.storeDate) >= date(#{datetime1}) and date(cg.storeDate) <![CDATA[<=]]> date(#{datetime2})
+        </if>
+        <if test="goodName != '' ">
+            and g.name like concat('%',#{goodName},'%')
+        </if>
+        limit #{begin},#{RecordCount}
+    </select>
+    <select id="collectionGoodstCount" resultType="java.lang.Integer">
+        select count(*) from collection_goods cg join goods g on cg.goodsId = g.id where cg.userId=#{userId} and cg.tag=1 and g.tag=1
+        <if test="datetime1 != '' and datetime2 != ''">
+            and date(cg.storeDate) >= date(#{datetime1}) and date(cg.storeDate) <![CDATA[<=]]> date(#{datetime2})
+        </if>
+        <if test="goodName != '' ">
+            and g.name like concat('%',#{goodName},'%')
+        </if>
+    </select>
+    <select id="selectCollectionGoods" resultType="com.shop.entity.CollectionGoods">
+        select * from collection_goods where userId=#{userId} and goodsId=#{goodsId} and tag=1
+    </select>
+</mapper>

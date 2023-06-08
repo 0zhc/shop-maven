@@ -1,0 +1,167 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*搜索条样式*/
+body {
+    font-size: 12px;
+}
+
+.selectItemcont {
+    padding: 8px;
+}
+
+#selectItem {
+    background: #FFF;
+    border: 1px solid #000;
+    overflow: hidden;
+    width: 220px;
+
+}
+
+.selectItemtit {
+    line-height: 20px;
+    height: 20px;
+    margin: 1px;
+    padding-left: 12px;
+}
+
+.bgc_ccc {
+    background: #0489dd;
+}
+
+.selectItemleft {
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.selectItemright {
+    float: right;
+    cursor: pointer;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.selectItemcls {
+    clear: both;
+    font-size: 0px;
+    height: 0px;
+    overflow: hidden;
+}
+
+.selectItemhidden {
+    display: none;
+    position: absolute;
+    top: 56px;
+    left: 274px;
+}
+
+/*这些是新加入的*/
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+ul, li {
+    list-style: none;
+}
+
+#menuMain {
+    background-image: url(../../images/index/newImgs/searchBackGroud.gif);
+    width: 605px;
+    height: 39px;
+}
+
+#menuMain li {
+    float: left;
+}
+
+#menuMain li input {
+    border: #FFFFFF solid 1px;
+}
+
+#address {
+    text-align: right;
+    padding-top: 0px;
+}
+
+#state {
+    background-image: url("") !important;
+    position: absolute;
+    z-index: 999;
+    top: 1113px;
+    left: 154px;
+    padding-top: 30px;
+}
+
+#state div {
+    float: left;
+    width: 150px;
+    height: 100px;
+}
+
+#state div ul {
+    padding-left: 20px;
+}
+
+#state div ul li {
+    font-size: 14px;
+    color: #1c1c1c;
+    font-weight: bolder;
+    margin-top: 5px;
+}
+
+#state div ul li a {
+    color: #bdbcbc;
+    font-size: 12px;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+#state div ul li a:hover {
+    color: #18a2e1;
+}
+
+/*foot*/
+#footer {
+    position: absolute;
+    z-index: 99;
+    top: 1254px;
+    left: 99px;
+}
+
+#foot_main ul {
+    padding-left: 300px;
+}
+
+#foot_main ul li {
+    float: left;
+    width: 100px;
+}
+
+#foot_main ul {
+    position: absolute;
+    z-index: 999;
+    top: 19px;
+    left: 0px;
+    width: 422px;
+}
+
+#foot_main ul li a {
+    color: #8c8c8c;
+    font-size: 12px;
+    font-family: "宋体";
+    text-decoration: none;
+}
+
+#foot_main ul li a:hover {
+    color: #1ca9e1;
+}
+
+#footer {
+    background-image: url("") !important;
+    padding-top: 20px;
+}

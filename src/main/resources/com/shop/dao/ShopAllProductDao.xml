@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shop.dao.ShopAllProductDao">
+    <select id="findAllProInShop" resultType="com.shop.entity.Goods">
+        select * from goods where tag=1 and shopId=#{shopId} and name like concat('%',#{proKeyWord},'%')
+        <if test="oneProPrice != '' and twoProPrice != ''">
+            and price >= #{oneProPrice} and price <![CDATA[<=]]> #{twoProPrice}
+        </if>
+        limit #{startIndex},#{limit}
+    </select>
+    <select id="findAllProInShopCount" resultType="java.lang.Integer">
+        select count(*) from goods where tag=1 and shopId=#{shopId} and name like concat('%',#{proKeyWord},'%')
+        <if test="oneProPrice != '' and twoProPrice != ''">
+            and price >= #{oneProPrice} and price <![CDATA[<=]]> #{twoProPrice}
+        </if>
+    </select>
+    <select id="findHotNewOldProInShop" resultType="com.shop.entity.Goods">
+        select *
+        from goods
+        where shopId = #{shopId}
+          and goodsType = #{goodsType}
+          and tag = 1
+    </select>
+    <select id="findOtherProInShop" resultType="com.shop.entity.Goods">
+        select * from goods where tag=1 and shopId=#{shopId} and name like concat('%',#{proKeyWord},'%') and
+        goodsType=#{goodsType}
+        <if test="oneProPrice != '' and twoProPrice != ''">
+            and price >= #{oneProPrice} and price <![CDATA[<=]]> #{twoProPrice}
+        </if>
+        limit #{startIndex},#{limit}
+    </select>
+    <select id="findOtherProInShopCount" resultType="java.lang.Integer">
+        select count(*) from goods where tag=1 and shopId=#{shopId} and name like concat('%',#{proKeyWord},'%') and
+        goodsType=#{goodsType}
+        <if test="oneProPrice != '' and twoProPrice != ''">
+            and price >= #{oneProPrice} and price <![CDATA[<=]]> #{twoProPrice}
+        </if>
+    </select>
+</mapper>

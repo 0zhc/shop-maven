@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>我的店铺</title>
+<link href="../../css/sysytem/content_conmond.css" type="text/css" rel="stylesheet" />
+<link href="../../css/sysytem/myshop.css" type="text/css" rel="stylesheet" />
+<script src="../../cjmqyeditor/kindeditor.js"></script>
+<script>
+			KE.show({
+				id : 'content1',
+				shadowMode : false,
+				autoSetDataMode: false,
+				syncType : '', //auto: 每次修改时都会同步; form:提交form时同步; 空:不会自动同步;
+				allowPreviewEmoticons : false,
+				resizeMode:false,
+				afterCreate : function(id) {
+					KE.event.add(KE.$('example'), 'submit', function() {
+						KE.sync(id);
+					});
+				}
+			});
+		</script>
+</head>
+
+<body>
+<div  id="content">
+      <form action="#">
+     <table  class="myshop">
+         <tr style="background-image:url(../images/sysytem/tableTip.jpg); background-repeat:no-repeat; line-height:21px;">
+           <td colspan="2" ><a href="#">首页</a><span>>></span><a href="#">后台管理</a><span>>></span><a href="#">广告设置</a></td>
+           
+         </tr>
+  
+	     <tr>
+           <td  style=" text-align:center; height:30px;">留言人</td><td>小小熊</td>
+         </tr>
+
+       
+         
+         <tr>
+            <td  style=" padding-left:10px; padding-right:10px;">回复内容</td><td><textarea rows="16" cols="81" id="content1"  style="width:690px;"></textarea></td>
+           
+         </tr>
+         
+         <tr style="text-align:center;">
+           <td colspan="2"><A href="#">回复</a>&nbsp;&nbsp;&nbsp;<a href="#">重置</a>&nbsp;&nbsp;&nbsp;<a href="Message.html">返回</a></td>
+           
+         </tr>
+     </table>
+     </form>
+</div>
+</body>
+</html>

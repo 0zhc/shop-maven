@@ -1,0 +1,17 @@
+﻿
+#Scoptip, #Businesstip, #Contacttip, #shoppingtip {
+    background-image: url(../../shop_image/red/goodsdescripTipTop.jpg);
+    background-size: 922px;
+    width: 922px;
+    height: 57px;
+    line-height: 38px;
+    font-weight: 900;
+    color: #FFFFFF;
+}
+
+#Scopmain, #Businessmain, #Contactmain, #shoppingmain {
+    color: #636363;
+    font-size: 14px;
+    line-height: 25px;
+    text-indent: 2em;
+}

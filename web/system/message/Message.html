@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <title>我的店铺</title>
+    <link href="../../css/sysytem/content_conmond.css" rel="stylesheet" type="text/css"/>
+    <link href="../../css/sysytem/myshop.css" rel="stylesheet" type="text/css"/>
+    <script src="../../cjmqyeditor/kindeditor.js"></script>
+
+    <script>
+        KE.show({
+            id: 'content1',
+            shadowMode: false,
+            autoSetDataMode: false,
+            syncType: '', //auto: 每次修改时都会同步; form:提交form时同步; 空:不会自动同步;
+            allowPreviewEmoticons: false,
+            resizeMode: false,
+            afterCreate: function (id) {
+                KE.event.add(KE.$('example'), 'submit', function () {
+                    KE.sync(id);
+                });
+            }
+        });
+    </script>
+
+
+</head>
+
+<body>
+<div id="content">
+    <form action="#">
+        <table class="myshop">
+            <tr style="background-image:url(../images/sysytem/tableTip.jpg); background-repeat:no-repeat; line-height:21px;">
+                <td colspan="7"><a href="#">首页</a><span>>></span><a href="#">后台管理</a><span>>></span><a href="#">店铺管理</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="7" style="text-align:center; font-size:15px; height:30px;">
+                    时间：<input type="text" value="2011.6"/>&nbsp;——&nbsp;<input type="text" value="2011.7"/>
+                    <input type="submit" value="搜索"/></td>
+            </tr>
+
+
+            <tr height="30px">
+                <td style="text-align:center;"><input type="checkbox"/>全选</td>
+                <td style="text-align:center;font-size:15px;">用户名称</td>
+                <td style="text-align:center;font-size:15px;">留言内容</td>
+                <td style="text-align:center;font-size:15px;">留言时间</td>
+                <td style="text-align:center;font-size:15px;">留言类型</td>
+                <td style="text-align:center;font-size:15px;">操作</td>
+            </tr>
+
+            <tr height="30px">
+                <td style="text-align:center;"><input type="checkbox"/></td>
+                <td style="text-align:center;font-size:15px;">大熊哥</td>
+                <td style="text-align:center;font-size:15px;">产品非常好，很实用！</td>
+                <td style="text-align:center;font-size:15px;">2011-05-15</td>
+                <td style="text-align:center;font-size:15px;">评价</td>
+                <td style="text-align:center;font-size:15px;"><a href="ReplyMessage.html">回复</a>&nbsp;&nbsp;<a href="#">删除</a>
+                </td>
+            </tr>
+
+            <tr height="30px">
+                <td style="text-align:center;"><input type="checkbox"/></td>
+                <td style="text-align:center;font-size:15px;">大熊哥</td>
+                <td style="text-align:center;font-size:15px;">产品非常好，很实用！</td>
+                <td style="text-align:center;font-size:15px;">2011-05-15</td>
+                <td style="text-align:center;font-size:15px;">评价</td>
+                <td style="text-align:center;font-size:15px;"><a href="ReplyMessage.html">回复</a>&nbsp;&nbsp;<a href="#">删除</a>
+                </td>
+            </tr>
+
+            <tr height="30px">
+                <td style="text-align:center;"><input type="checkbox"/></td>
+                <td style="text-align:center;font-size:15px;">大熊哥</td>
+                <td style="text-align:center;font-size:15px;">产品非常好，很实用！</td>
+                <td style="text-align:center;font-size:15px;">2011-05-15</td>
+                <td style="text-align:center;font-size:15px;">评价</td>
+                <td style="text-align:center;font-size:15px;"><a href="ReplyMessage.html">回复</a>&nbsp;&nbsp;<a href="#">删除</a>
+                </td>
+            </tr>
+
+            <tr height="30px">
+                <td style="text-align:center;"><input type="checkbox"/></td>
+                <td style="text-align:center;font-size:15px;">大熊哥</td>
+                <td style="text-align:center;font-size:15px;">产品非常好，很实用！</td>
+                <td style="text-align:center;font-size:15px;">2011-05-15</td>
+                <td style="text-align:center;font-size:15px;">评价</td>
+                <td style="text-align:center;font-size:15px;"><a href="ReplyMessage.html">回复</a>&nbsp;&nbsp;<a href="#">删除</a>
+                </td>
+            </tr>
+
+            <tr height="30px">
+                <td colspan="7" style=" text-align:center; height:30px;">
+                    <a href="#">取消全选</a>&nbsp;&nbsp;&nbsp; <a href="#">删除全部</a></td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

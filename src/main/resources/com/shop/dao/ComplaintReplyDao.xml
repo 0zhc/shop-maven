@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shop.dao.ComplaintReplyDao">
+    <insert id="addComplaintReply">
+        insert into complaint_reply
+        values (null, #{complaintReply.PreRightId}, #{complaintReply.writerId}, #{complaintReply.replyContent},
+                #{complaintReply.replyTime}, #{complaintReply.replyType}, #{complaintReply.tag})
+    </insert>
+
+    <select id="findComplaintReplyByPreRightId" resultType="com.shop.entity.ComplaintReply">
+        select *
+        from complaint_reply as c
+        where c.PreRightId = #{PreRightId}
+          and c.replyType = #{replyTye}
+        order by c.replyTime desc
+    </select>
+</mapper>

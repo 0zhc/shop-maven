@@ -1,0 +1,92 @@
+#banner {
+    position: absolute;
+    top: 30px;
+    left: 19px;
+}
+
+#banner img {
+    width: 1197px;
+}
+
+#content_top, #content_middle, #content_buttom {
+    width: 1003px;
+    background-size: 1004px;
+}
+
+#content_buttom {
+    height: 21px;
+}
+
+#content {
+    padding-left: 0px;
+}
+
+#menu_middle {
+    height: 759px
+}
+
+#state {
+    top: 988px;
+}
+
+#foot_main ul {
+    top: -100px;
+}
+
+.pos {
+    width: 77px;
+    position: absolute;
+    top: -105px;
+    left: 435px;
+}
+
+.line2 {
+    top: 1155px;
+    left: 605px;
+}
+
+.line3 {
+    top: 12px;
+    left: 1015px;
+}
+
+.line4 {
+    top: 12px;
+    left: 1035px;
+}
+
+.line5 {
+    top: 12px;
+    left: 360px;
+}
+
+.backg3 {
+    height: 322px;
+    width: 100%;
+    position: absolute;
+    top: 988px;
+    left: 0px;
+    background-color: #f1f1f1;
+}
+
+#container {
+    height: 1308px;
+}
+
+.line1 {
+    position: absolute;
+    z-index: 3;
+    top: 1138px;
+    left: 305px;
+    background-color: #ededed;
+    height: 1px;
+    width: 812px;
+}
+
+#trade_record ul, #collect_file ul {
+    top: 29px !important;
+}
+
+.selectItemhidden {
+    left: 861px !important;
+}
